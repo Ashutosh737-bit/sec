@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up</title>
+  <link rel="icon" href="https://img.icons8.com/?size=64&id=AfM2kzPzTz6Q&format=png" type="image/x-icon">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #6d6de3;
+    }
+    .form-container {
+      background: #b5f5c0;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    .form-container h2 {
+      margin-bottom: 20px;
+    }
+    .form-container label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+    .form-container input, .form-container select {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .form-container button {
+      width: 100%;
+      padding: 10px;
+      background: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .form-container button:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Sign Up</h2>
+    <form id="signupForm">
+      <label for="role">Select Role:</label>
+      <select id="role" name="role">
+        <option value="service_provider">Service Provider</option>
+        <option value="service_seeker">Service Seeker</option>
+      </select>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
+      <label for="otp">OTP:</label>
+      <input type="text" id="otp" name="otp" placeholder="Enter OTP" disabled />
+      <button type="button" id="sendOtp">Send OTP</button>
+      <br>
+      <br>
+      <button type="submit" id="submitBtn" disabled>Sign Up</button>
+    </form>
+  </div>
+
+  <script>
+    const sendOtpBtn = document.getElementById('sendOtp');
+    const otpInput = document.getElementById('otp');
+    const submitBtn = document.getElementById('submitBtn');
+    const form = document.getElementById('signupForm');
+
+    sendOtpBtn.addEventListener('click', async () => {
+      const email = document.getElementById('email').value;
+      if (!email) return alert('Please enter your email.');
+
+      const response = await fetch('/send-otp', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await response.json();
+      if (data.success) {
+        alert('OTP sent to your email.');
+        otpInput.disabled = false;
+        submitBtn.disabled = false;
+      } else {
+        alert('Error sending OTP.');
+      }
+    });
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const role = document.getElementById('role').value;
+      const email = document.getElementById('email').value;
+      const otp = document.getElementById('otp').value;
+
+      const response = await fetch('/sign-up', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ role, email, otp }),
+      });
+
+      const data = await response.json();
+      if (data.success) {
+        alert('Sign up successful.');
+        form.reset();
+      } else {
+        alert('Sign up failed. Check your OTP.');
+      }
+    });
+  </script>
+</body>
+</html>

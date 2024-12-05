@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InfluencerConnect</title>   
+  <link rel="icon" href="https://img.icons8.com/?size=64&id=AfM2kzPzTz6Q&format=png" type="image/x-icon">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center; /* Centered content horizontally */
+      align-items: flex-start; /* Align to the top */
+      min-height: 100vh; /* Ensures the full height of the viewport is used */
+      background-color: #fe9861;
+      flex-direction: column;
+      padding: 20px;
+    }
+
+    .landing-container {
+      text-align: center;
+      background: #ffffff;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 900px; /* Increased the max-width for a bigger layout */
+      position: relative;
+      overflow: hidden;
+      margin-top: 20px; /* Added margin-top for spacing */
+    }
+
+    /* Header Styling */
+    .landing-container h1 {
+      margin-bottom: 20px;
+      color: #007bff;
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+
+    .landing-container p {
+      margin-bottom: 30px;
+      font-size: 1.2rem;
+      color: #555;
+    }
+
+    .landing-container button {
+      padding: 12px 25px;
+      background: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 20px;
+    }
+
+    .landing-container button:hover {
+      background: #0056b3;
+    }
+
+    /* Graphics in background */
+    .landing-container::after {
+      content: "";
+      background: url('https://via.placeholder.com/800x400/cccccc/ffffff?text=Influencer+Marketing+Graphics') no-repeat center center;
+      background-size: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.15;
+      z-index: -1;
+    }
+
+    /* Tables */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+
+    table, th, td {
+      border: 1px solid #ddd;
+    }
+
+    th, td {
+      padding: 12px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #007bff;
+      color: #fff;
+    }
+
+    /* Section Headers */
+    .info-section h2 {
+      color: #007bff;
+      margin-bottom: 15px;
+    }
+
+    .info-section {
+      margin-top: 30px;
+    }
+
+    /* Icons */
+    .info-section .feature-icon {
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .landing-container {
+        padding: 25px;
+      }
+
+      .landing-container h1 {
+        font-size: 2rem;
+      }
+
+      .landing-container p {
+        font-size: 1rem;
+      }
+
+      table {
+        font-size: 0.9rem;
+      }
+
+      .landing-container button {
+        padding: 10px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="landing-container">
+    <h1>Welcome to InfluencerConnect</h1>
+    <p>
+      Connect with influencers who can suggest the best brands for your business. Whether you’re a service provider looking to market your brand or a service seeker searching for recommendations, we’ve got you covered!
+    </p>
+
+    <!-- Table 1: Key Features -->
+    <div class="info-section">
+      <h2>Key Features</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><img class="feature-icon" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9xWud3dvyoOcM7te5C99vDKh6tWnBw0eToA&s" alt="Regional Influencers Icon"> Regional Influencers</td>
+            <td>Connect with influencers who have strong followings in specific regions for localized marketing.</td>
+          </tr>
+          <tr>
+            <td><img class="feature-icon" src="https://img.icons8.com/ios-filled/50/007bff/graph.png" alt="Engagement Metrics Icon"> Engagement Metrics</td>
+            <td>Analyze engagement rates, audience demographics, and other performance metrics.</td>
+          </tr>
+          <tr>
+            <td><img class="feature-icon" src="https://img.icons8.com/ios-filled/50/007bff/idea.png" alt="Customized Matching Icon"> Customized Matching</td>
+            <td>Tailor influencer recommendations based on your brand's specific campaign goals.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Table 2: Benefits for Brands -->
+    <div class="info-section">
+      <h2>Benefits for Brands</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Benefit</th>
+            <th>How It Helps</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><img class="feature-icon" src="https://img.icons8.com/ios-filled/50/007bff/handshake.png" alt="Authentic Connections Icon"> Authentic Connections</td>
+            <td>Partner with influencers who align with your brand values to foster trust and loyalty.</td>
+          </tr>
+          <tr>
+            <td><img class="feature-icon" src="https://img.icons8.com/ios-filled/50/007bff/target.png" alt="Targeted Audience Icon"> Targeted Audience</td>
+            <td>Reach the right audience based on demographics, interests, and location.</td>
+          </tr>
+          <tr>
+            <td><img class="feature-icon" src="https://img.icons8.com/ios-filled/50/007bff/money-bag.png" alt="High ROI Icon"> High ROI</td>
+            <td>Optimize marketing spend by focusing on influencers with proven engagement and conversion rates.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <button id="proceedBtn">Proceed to Sign Up</button>
+  </div>
+
+  <script>
+    const proceedBtn = document.getElementById('proceedBtn');
+    proceedBtn.addEventListener('click', () => {
+      window.location.href = 'signup.html'; // Navigate to the sign-up page
+    });
+  </script>
+</body>
+</html>

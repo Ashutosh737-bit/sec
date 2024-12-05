@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Influencer Match</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4a90e2;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+        .carousel {
+            position: relative;
+            overflow: hidden;
+            height: 100vh;
+        }
+        .carousel img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            animation: slide 15s infinite;
+        }
+        .carousel img:nth-child(2) {
+            animation-delay: 5s;
+        }
+        .carousel img:nth-child(3) {
+            animation-delay: 10s;
+        }
+        @keyframes slide {
+            0%, 100% {
+                opacity: 0;
+                z-index: 1;
+            }
+            33% {
+                opacity: 1;
+                z-index: 2;
+            }
+            66% {
+                opacity: 0;
+                z-index: 1;
+            }
+        }
+        .carousel-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+        }
+        .carousel-content h1 {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+        .carousel-content p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+        .carousel-content a {
+            color: white;
+            background: #4a90e2;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .features {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 40px;
+            background-color: #f1f1f1;
+        }
+        .feature-box {
+            text-align: center;
+            max-width: 300px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .feature-box img {
+            width: 100%;
+            max-width: 80px;
+            margin-bottom: 15px;
+        }
+        footer {
+            background-color: #4a90e2;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Influencer Match</h1>
+        <nav>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+    </header>
+
+    <!-- Full-Screen Sliding Image Carousel -->
+    <div class="carousel">
+        <img src="https://via.placeholder.com/1920x1080?text=Regional+Influencers" alt="Regional Influencers">
+        <img src="https://via.placeholder.com/1920x1080?text=Engagement+Insights" alt="Engagement Insights">
+        <img src="https://via.placeholder.com/1920x1080?text=Boost+Your+Sales" alt="Boost Your Sales">
+        <div class="carousel-content">
+            <h1>Find the Perfect Influencer</h1>
+            <p>Discover regional influencers and maximize engagement to boost your sales.</p>
+            <a href="services.html">Get Started</a>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="features">
+        <div class="feature-box">
+            <img src="https://via.placeholder.com/80" alt="Regional Influencers">
+            <h2>Regional Influencers</h2>
+            <p>Get tailored recommendations for influencers who resonate with your target audience.</p>
+        </div>
+        <div class="feature-box">
+            <img src="https://via.placeholder.com/80" alt="Engagement Insights">
+            <h2>Engagement Insights</h2>
+            <p>Analyze engagement metrics to ensure optimal campaign performance.</p>
+        </div>
+        <div class="feature-box">
+            <img src="https://via.placeholder.com/80" alt="Boost Sales">
+            <h2>Boost Sales</h2>
+            <p>Maximize your ROI by collaborating with the right influencers.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Influencer Match. All rights reserved.</p>
+    </footer>
+</body>
+</html>
